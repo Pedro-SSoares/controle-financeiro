@@ -1,10 +1,23 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import HomePage from './pages/HomePage'
+import LoginPage from './pages/LoginPage'
+import DashboardPage from './pages/HomePage'
+import AddNewExpensePage from './pages/AddNewExpensePage'
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Olá Mundo!
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/new" element={<AddNewExpensePage />} />
+    </Routes>
+  </BrowserRouter>
   );
 }
 
